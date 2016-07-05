@@ -3,7 +3,7 @@ self.addEventListener('push', function(event) {
   var notificationTitle = 'New Message';
   const notificationOptions = {
     body: 'Push mesage received',
-    icon: './images/icon-192x192.png',
+    icon: 'images/icon-192x192.png',
     tag: 'simple-push-demo-notification',
     data: {
       url: 'http://ninjacoders.info'
