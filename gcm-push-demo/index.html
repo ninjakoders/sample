@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Push Notification for Web Application</title>
-	<link rel="manifest" href="manifest.json">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Akshay Kadu">
+	
+    <title>Push Notification for Web Application</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/full-width-pics.css" rel="stylesheet">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 	<script>
+
 		document.addEventListener('DOMContentLoaded', function() {
+			
+			    $('#toggle-event').change(function() {
+			      
+			    });
 			document.querySelector("#enablepush").addEventListener('click', function(e) {
 				if(Notification.permission !== 'granted') {
 					Notification.requestPermission().then(function(permission) {
@@ -61,11 +82,86 @@
 			document.querySelector("#token").innerHTML = token;	
 		}
 	</script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+
 <body>
-	<h1>Push Notification for Web Application</h1>
-	<button id="enablepush">Enable Push</button><br />
-	<label for="token">Registration ID</label>
-	<textarea id="token" rows="6" cols="40"></textarea>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                
+                <a class="navbar-brand" href="#">GCM PUSH</a>
+            </div>
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Full Width Image Header with Logo -->
+    <!-- Image backgrounds are set within the full-width-pics.css file. -->
+    <header class="image-bg-fluid-height">
+        <img class="img-responsive img-center" src="http://3.bp.blogspot.com/-Ou7d5RbXaWM/V3VmvW4qOgI/AAAAAAAAA6k/nnQ6II32NIsA2E51sZ4YSlGqBp86lJzBQCK4B/s1600/logo.png&text=Logo" alt="">
+    </header>
+
+    <!-- Content Section -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                	 <input id="toggle-event" type="checkbox" data-toggle="toggle">
+					<button id="enablepush" class="btn-default">Enable Push</button><br />
+					<label for="token">Registration ID</label>
+					<textarea id="token" rows="6" cols="40"></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed Height Image Aside -->
+    <!-- Image backgrounds are set within the full-width-pics.css file. -->
+   <!--  <aside class="image-bg-fixed-height"></aside>
+ -->
+    <!-- Content Section -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="section-heading">Section Heading</h1>
+                   
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy;  2016 <a href="http://www.ninjacoders.info">NinjaCoders</a></p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
