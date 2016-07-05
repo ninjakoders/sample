@@ -19,7 +19,7 @@ body {
 
 .image-bg-fluid-height {
 	background: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/brickwall.png') repeat center center scroll;
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .image-bg-fixed-height {
@@ -32,7 +32,7 @@ body {
 }
 
 section {
-    padding: 75px 0;
+    padding: 25px 0;
 }
 
 .section-heading {
@@ -61,4 +61,7 @@ footer {
     .section-heading {
         font-size: 2em;
     }
+}
+.col-center{
+   text-align: center;
 }
