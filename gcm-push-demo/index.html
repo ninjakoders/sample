@@ -79,6 +79,7 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly: true})
 .then(function(subscription){
   getToken(subscription);
+  storeToken(subscription);
 }).catch(function(err){
   console.error('Error occured while subscribe(): ', err);
 });
@@ -100,6 +101,11 @@ function getToken(subscription) {
   console.log(subscription);
   var token = subscription.endpoint.substring(40, subscription.endpoint.length);
   document.querySelector("#client-token").innerHTML = token;	
+}
+
+function storeToken(subscription) {
+  var token = subscription.endpoint.substring(40, subscription.endpoint.length);
+  firebase.database().ref('tokens/').push({token: token});
 }
 </script>
 </head>
@@ -234,6 +240,18 @@ function getToken(subscription) {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDzrpolWQMdPrdgvzzTRu3IxEMCIrogmLs",
+    authDomain: "gcm-notification-demo-da685.firebaseapp.com",
+    databaseURL: "https://gcm-notification-demo-da685.firebaseio.com",
+    storageBucket: "",
+  };
+  firebase.initializeApp(config);
+</script>
+    
 </body>
 
 </html>
