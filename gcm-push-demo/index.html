@@ -24,6 +24,7 @@
     //check browser
     var isChrome = !!window.chrome && !!window.chrome.webstore;
     if(!isChrome) {
+      $('#browser-error').show();
       alert('Sorry this Demo works only in Chrome Browser.');
     }
 
@@ -135,7 +136,10 @@ function storeToken(subscription) {
       <img class="img-responsive img-center" src="http://3.bp.blogspot.com/-Ou7d5RbXaWM/V3VmvW4qOgI/AAAAAAAAA6k/nnQ6II32NIsA2E51sZ4YSlGqBp86lJzBQCK4B/s1600/logo.png&text=Logo" alt="">
     </a>
   </header>
-
+  <div class="alert alert-danger fade in" id="browser-error" style="display: none">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+      <strong>Sorry!</strong> Now we support only chrome browser, Please open the Demo in chrome browser to test Push Notification.<span id="gcm-error-msg"></span>
+    </div>
   <!-- Content Section -->
   <section>
     <div class="container">
