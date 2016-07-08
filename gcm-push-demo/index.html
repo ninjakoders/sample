@@ -21,6 +21,12 @@
   <script src="js/gcm.js"></script>
   <script>
   document.addEventListener('DOMContentLoaded', function() {
+    //check browser
+    var isChrome = !!window.chrome && !!window.chrome.webstore;
+    if(!isChrome) {
+      alert('Sorry our this app supports only in Chrome');
+    }
+    
     $(function() {
       $('#togglebtn').change(function() {
         console.log('toggle button clicked', $(this).prop('checked'));
@@ -217,7 +223,7 @@ Follow @TwitterDev</a><br/>
         <div class="col-md-6">
           <h3>HTTP POST Request</h3>
         <pre>
-          https://gcm-http.googleapis.com/gcm/send
+          https://android.googleapis.com/gcm/send
           Content-Type:application/json
           Authorization:key=AIzaSyZ-1u...fMwj0qwRt-bJvirI
 
@@ -228,6 +234,7 @@ Follow @TwitterDev</a><br/>
             "to" : "client_token"
           }
         </pre>
+        <p>We can't send 'Data' through GCM on browsers, if you send 'Data' in your POST request it will get ignored.</p>
       </div>
       <div class="col-md-3"></div>
       </div>
