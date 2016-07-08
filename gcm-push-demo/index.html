@@ -24,9 +24,9 @@
     //check browser
     var isChrome = !!window.chrome && !!window.chrome.webstore;
     if(!isChrome) {
-      alert('Sorry our this app supports only in Chrome');
+      alert('Sorry this Demo works only in Chrome Browser.');
     }
-    
+
     $(function() {
       $('#togglebtn').change(function() {
         console.log('toggle button clicked', $(this).prop('checked'));
